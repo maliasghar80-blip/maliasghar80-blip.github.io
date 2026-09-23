@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Financial risk models: VaR, credit scoring, liquidity · M. Ali Asghar</title><meta name="description" content="Market, credit and liquidity risk models built in Excel."><style>:root{--bg:#fbfaf7;--fg:#1d1d1b;--mut:#5d5b55;--line:#e3e0d8;--acc:#0f5c4d;--acc2:#e8f1ee;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--bg:#141413;--fg:#eceae4;--mut:#a9a69d;--line:#2e2d2a;--acc:#6cc3ad;--acc2:#1c2a26;--card:#1b1b19}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Georgia,'Times New Roman',serif}
+.wrap{max-width:860px;margin:0 auto;padding:40px 18px 80px}
+nav{display:flex;gap:18px;flex-wrap:wrap;font:14px/1.4 system-ui,sans-serif;margin-bottom:36px}nav a{color:var(--mut);text-decoration:none}nav a:hover,nav a.on{color:var(--acc)}
+h1{font-size:34px;line-height:1.2;margin:0 0 6px}h2{font-size:22px;margin:44px 0 10px;border-bottom:1px solid var(--line);padding-bottom:6px}h3{font-size:17px;margin:22px 0 6px}
+.sub{color:var(--mut);font:15px/1.5 system-ui,sans-serif}.k{font:13px/1.4 system-ui,sans-serif;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+a{color:var(--acc)}p{margin:8px 0}ul{padding-left:20px}li{margin:4px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px}.card h3{margin-top:0}
+.card a.go{font:14px system-ui,sans-serif;font-weight:600;text-decoration:none}
+.stat{display:flex;gap:26px;flex-wrap:wrap;margin:16px 0}.stat div{min-width:120px}.stat b{display:block;font:600 24px system-ui,sans-serif;color:var(--acc)}.stat span{font:13px system-ui,sans-serif;color:var(--mut)}
+.tw{overflow-x:auto;margin:10px 0}table{border-collapse:collapse;font:13.5px/1.4 system-ui,sans-serif;width:100%}th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}th:first-child,td:first-child{text-align:left}thead th{color:var(--mut);font-weight:600}
+.note{font:13px/1.5 system-ui,sans-serif;color:var(--mut)}.eq{font:15px 'Courier New',monospace;background:var(--acc2);padding:10px 12px;border-radius:8px;overflow-x:auto}
+.tag{display:inline-block;font:12px system-ui,sans-serif;background:var(--acc2);color:var(--acc);padding:2px 8px;border-radius:99px;margin:2px 4px 2px 0}
+svg text{font-family:system-ui,sans-serif;fill:var(--fg)}footer{margin-top:60px;font:13px system-ui,sans-serif;color:var(--mut)}
+</style></head><body><div class="wrap"><nav><a href="index.html" class="">Profile</a><a href="fyp.html" class="">Published work: FYP</a><a href="frm.html" class="on">Risk modelling projects</a></nav>
+<p class="k">Financial Risk Management · IBA Karachi · Spring 2026</p>
+<h1>Risk modelling projects</h1>
+<p class="sub">Three Excel models built for the FRM course: market risk, consumer credit risk and bank liquidity risk. All calculations are formula-linked to the data sheets.</p>
+<h2 id="market">1. Market risk: VaR on a 9-stock PSX portfolio</h2>
+<p>Ten years of daily PSX prices, the KSE-100 and KIBOR tenors (SBP EasyData) were aligned chronologically; log returns were built at daily, weekly, monthly and quarterly frequency. The project covers 50+ tasks: moments, parametric VaR (86.5/92/96.5/98.5%), historical VaR, betas against KSE-100 and 6M KIBOR, correlation and variance-covariance matrices, portfolio VaR, VaR decomposition (standalone, marginal, component), and multi-asset scenarios across currencies, commodities, international indices and benchmark rates.</p>
+<div class="stat"><div><b>0.70</b><span>portfolio beta vs KSE-100</span></div><div><b>0.63</b><span>correlation with KSE-100</span></div><div><b>1.29%</b><span>daily portfolio σ (Nov 2022–Dec 2025)</span></div><div><b>−2.65%</b><span>daily historical VaR, 98.5%</span></div></div>
+<div class="tw"><table><thead><tr><th>Stock</th><th>Weight</th><th>Daily σ</th><th>Parametric VaR 98.5%</th><th>β vs KSE-100</th></tr></thead><tbody><tr><td>AKDHL</td><td>10%</td><td>3.29%</td><td>-7.16%</td><td>0.45</td></tr><tr><td>BTL</td><td>6%</td><td>2.89%</td><td>-6.23%</td><td>0.31</td></tr><tr><td>HPL</td><td>12%</td><td>3.00%</td><td>-6.43%</td><td>0.54</td></tr><tr><td>ISIL</td><td>10%</td><td>7.78%</td><td>-16.79%</td><td>0.33</td></tr><tr><td>GCIL</td><td>5%</td><td>3.30%</td><td>-7.15%</td><td>1.14</td></tr><tr><td>GTYR</td><td>9%</td><td>2.63%</td><td>-5.73%</td><td>1.24</td></tr><tr><td>SITC</td><td>11%</td><td>2.38%</td><td>-5.12%</td><td>0.57</td></tr><tr><td>LOTCHEM</td><td>12%</td><td>2.52%</td><td>-5.41%</td><td>0.92</td></tr><tr><td>NATF</td><td>25%</td><td>2.06%</td><td>-4.43%</td><td>0.80</td></tr></tbody></table></div>
+<p class="note">Individual σ and VaR use each stock's full history; betas use the common portfolio window (GCIL listed Nov 2022). VaR = mean − z·σ.</p>
+<p>Diversification works: the portfolio's daily 98.5% historical VaR (−2.65%) is far smaller than the weighted standalone VaRs, and a beta of 0.70 makes it defensive relative to the index. The 6M KIBOR beta is slightly negative (−0.006), matching the usual inverse link between rates and equities.</p>
+<h2 id="credit">2. Credit risk: consumer lending scorecard</h2>
+<p>A scoring model for car loans, personal loans, running finance and credit cards, with 60%+ of fields taken directly from a Pakistani bank's consumer application form, as the brief required.</p>
+<ul><li><b>Six weighted categories:</b> financial capacity 28%, credit bureau and banking history 22%, employment 20%, personal 12%, product and collateral 12%, references and digital signals 6%.</li>
+<li><b>Output:</b> a score out of 100 mapped to a 12-grade rating and a lending decision, with 8 key risk indicators flagged green, yellow or red (debt-burden ratio, eCIB, loan-to-income, LTV, savings rate and others).</li>
+<li><b>13 auto-checked hard stops override the score.</b> Examples: debt-burden ratio above the SBP 50% cap (Prudential Regulation R-4), an active eCIB default (Annexure CF-1), age and tenor limits, and car-loan LTV above 70%.</li></ul>
+<h2 id="liquidity">3. Liquidity risk: LCR, bank-run stress and maturity GAP</h2>
+<ul><li><b>Basel III LCR under three inflow caps</b> (74%, 51% and 24% of outflows) gives 400%, 212% and 137%. All three are compliant, but an oil-shock scenario would compress them sharply.</li>
+<li><b>Bank-run stress test:</b> with liquidity conversion factors of 1 / 0.98 / 0.6 / 0, the bank survives withdrawals of Rs 105m and Rs 295m but fails from Rs 695m. The critical withdrawal is Rs 386.5m, or 40.7% of deposits. Tighter factors bring failure forward to Rs 300m.</li>
+<li><b>Maturity GAP:</b> every bucket up to 12 months is positive, but the 240–360-month bucket shows a gap of −2.77m that turns cumulative MAGAP negative. That is a structural long-end funding mismatch, and the model sets out the fixes.</li></ul>
+<footer>Muhammad Ali Asghar · Karachi, Pakistan · <a href="mailto:maliasghar80@gmail.com">maliasghar80@gmail.com</a> · <a href="https://www.linkedin.com/in/muhammad-ali-asghar-3972511a5">LinkedIn</a></footer></div></body></html>
